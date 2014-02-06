@@ -1,4 +1,4 @@
-/*global module:false*/
+/*global module:false, require*/
 module.exports = function (grunt) {
 
 	// Displays the elapsed execution time of grunt tasks
@@ -11,9 +11,7 @@ module.exports = function (grunt) {
 	var reportDir = 'reports/' + dateFormat(new Date(), 'yyyymmdd-HHMMss');
 	var tasks = 'tasks/**/*.js';
 
-	// Project configuration.
 	grunt.initConfig({
-		// Task configuration.
 		jshint : {
 			options  : {
 				curly  : true,
@@ -30,9 +28,9 @@ module.exports = function (grunt) {
 				browser: true,
 				globals: {}
 			},
-//			gruntfile: {
-//				src: 'Gruntfile.js'
-//			},
+			gruntfile: {
+				src: 'Gruntfile.js'
+			},
 			lib_test : {
 				src: ['src/**/*.js']
 			}

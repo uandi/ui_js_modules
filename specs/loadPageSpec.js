@@ -30,5 +30,7 @@ define(
 				expect(testModuleStub.init).toHaveBeenCalled();
 			});
 		});
+
 	}
 );
+

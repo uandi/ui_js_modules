@@ -22,11 +22,8 @@ define(
 				}
 
 			}, function (err) {
-				window.console.warn('error loading page module "' + err.requireModules[0] + '"');
-//				console.dir(err);
-//				throw new Error(err.message);
-
-				return false;
+				var errorMsg = 'error loading page module "' + err.requireModules[0] + '"';
+				throw new Error(errorMsg);
 			});
 
 		};

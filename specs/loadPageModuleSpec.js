@@ -10,7 +10,7 @@ define(
 );
 
 define(
-	['./../src/loadPage/loadPage.js'],
+	['./../src/loadPageModule/loadPageMOdule.js'],
 	function (loadPageModule) {
 		"use strict";
 
@@ -30,5 +30,7 @@ define(
 				expect(testModuleStub.init).toHaveBeenCalled();
 			});
 		});
+
 	}
 );
+

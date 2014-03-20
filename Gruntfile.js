@@ -1,4 +1,4 @@
-/*global module:false*/
+/*global module:false, require*/
 module.exports = function (grunt) {
 
 	// Displays the elapsed execution time of grunt tasks
@@ -10,10 +10,9 @@ module.exports = function (grunt) {
 	var dateFormat = require('dateformat');
 	var reportDir = 'reports/' + dateFormat(new Date(), 'yyyymmdd-HHMMss');
 	var tasks = 'tasks/**/*.js';
+	var specs = 'specs/*Spec.js';
 
-	// Project configuration.
 	grunt.initConfig({
-		// Task configuration.
 		jshint : {
 			options  : {
 				curly  : true,
@@ -30,9 +29,9 @@ module.exports = function (grunt) {
 				browser: true,
 				globals: {}
 			},
-//			gruntfile: {
-//				src: 'Gruntfile.js'
-//			},
+			gruntfile: {
+				src: 'Gruntfile.js'
+			},
 			lib_test : {
 				src: ['src/**/*.js']
 			}
@@ -44,9 +43,9 @@ module.exports = function (grunt) {
 		},
 		jasmine: {
 			taskName: {
-				src    : 'src/**/*.js',
+				src    : '<%= jshint.gruntfile.src %>',
 				options: {
-					specs          : 'specs/*Spec.js',
+					specs          : specs,
 					helpers        : 'specs/*Helper.js',
 					host           : 'http://127.0.0.1:8000/',
 					template       : require('grunt-template-jasmine-requirejs'),
@@ -64,8 +63,8 @@ module.exports = function (grunt) {
 				tasks: ['jshint:gruntfile']
 			},
 			lib_test : {
-				files: '<%= jshint.lib_test.src %>',
-				tasks: ['jshint:lib_test', 'qunit']
+				files: ['<%= jshint.lib_test.src %>', specs],
+				tasks: ['jshint:lib_test', 'connect', 'jasmine']
 			}
 		},
 		instrument : {

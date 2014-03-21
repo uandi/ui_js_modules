@@ -43,7 +43,6 @@ module.exports = function (grunt) {
 		},
 		jasmine: {
 			taskName: {
-				src    : '<%= jshint.gruntfile.src %>',
 				options: {
 					specs          : specs,
 					helpers        : 'specs/*Helper.js',

@@ -10,13 +10,17 @@ define(
 );
 
 define(
-	['./../src/loadPageModule/loadPageMOdule.js'],
+	['./../src/loadPageModule/loadPageModule.js'],
 	function (loadPageModule) {
 		"use strict";
 
 		describe('Page Loader Module', function () {
 			it('should exist', function() {
 				expect(loadPageModule).toBeTruthy();
+			});
+
+			it('is also exposed via window/globals', function() {
+				expect(window.loadPageModule).toBeTruthy();
 			});
 
 			it('loads a given module via RequireJS', function() {
@@ -30,7 +34,6 @@ define(
 				expect(testModuleStub.init).toHaveBeenCalled();
 			});
 		});
-
 	}
 );
 

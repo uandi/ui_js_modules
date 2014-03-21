@@ -1,4 +1,6 @@
-(function (define, require) {
+/*global define, require*/
+
+(function (window, undefined) {
 	"use strict";
 
 	/**
@@ -26,8 +28,12 @@
 		});
 	};
 
-	if (typeof define === "function") {
-		define( "loadPageModule", [], function () { return loadPageModule; } );
+	window.loadPageModule = loadPageModule;
+
+	if (typeof window.define === "function" && window.define.amd) {
+		window.define(function() {
+			return window.loadPageModule;
+		});
 	}
 
-}(define, require));
+}(window, define));

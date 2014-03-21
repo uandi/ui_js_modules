@@ -1,10 +1,10 @@
 ## [u+i](http://uandi.com/) JavaScript modules ##
 
-Collection of RequireJS based JavaScript modules, build for easy re-use. Developed/tested via [Jasmine](http://pivotal.github.io/jasmine/).
+Collection of JavaScript modules, build for easy re-use (both AMD ready and via window globals). See the [src directory](src/) for list of modules.
 
 ### Setup ###
 
-Scripts are developed and tested via Grunt.
+Scripts are Developed/tested via [Jasmine](http://pivotal.github.io/jasmine/) e.g. Grunt.
 
 #### Install Grunt CLI ####
 

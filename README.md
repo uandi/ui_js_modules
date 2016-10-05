@@ -6,7 +6,7 @@ Collection of JavaScript modules, build for easy re-use (both AMD ready and via 
 
 ### Setup ###
 
-Scripts are Developed/tested via [Jasmine](http://pivotal.github.io/jasmine/) e.g. Grunt.
+Scripts are Developed/tested via [Jasmine](https://jasmine.github.io/) e.g. Grunt.
 
 #### Install Grunt CLI ####
 
